@@ -2,7 +2,7 @@ name: vambot
 
 on:
   schedule:
-    - cron: '0,6 * * * *'  # every half hour
+    - cron: '10 * * * *'  # every half hour
 
 jobs:
   vambot-post:
