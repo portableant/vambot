@@ -2,10 +2,10 @@ name: vambot
 
 on:
   schedule:
-    - cron: '0,20 * * * *'
+    - cron: '0,40 * * * *'  # every half hour
 
 jobs:
-  vambot-post:
+  londonmapbot-post:
     runs-on: macOS-latest
     env:
       TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
