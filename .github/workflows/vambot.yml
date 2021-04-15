@@ -2,7 +2,7 @@ name: vambot
 
 on:
   schedule:
-    - cron: '8 23 * * *'
+    - cron: '0,20 * * * *'
 
 jobs:
   vambot-post:
