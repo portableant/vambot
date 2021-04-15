@@ -2,7 +2,7 @@ name: vambot
 
 on:
   schedule:
-    - cron: '0 12,00 * * *'  # every half hour
+    - cron: '8 23 * * *'
 
 jobs:
   londonmapbot-post:
