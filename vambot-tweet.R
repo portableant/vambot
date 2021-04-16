@@ -26,5 +26,6 @@ download.file(imageUrl, temp_file)
 
 rtweet::post_tweet(
   status = tweet,
+  media = temp_file,
   token = vambot_token
 )
