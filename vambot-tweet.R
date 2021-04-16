@@ -20,7 +20,7 @@ title <- records$primaryTitle
 imageID <- records$primaryImageId
 imageUrl <- paste0('https://framemark.vam.ac.uk/collections/',imageID,'/full/full/0/default.jpg')
 url <- paste0('https://collections.vam.ac.uk/item/',number)
-tweet <- paste0(title,' ', url)
+tweet <- paste0('From the V&A collection: ', title,' ', url)
 temp_file <- tempfile()
 download.file(imageUrl, temp_file)
 
