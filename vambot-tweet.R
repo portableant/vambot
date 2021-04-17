@@ -22,7 +22,7 @@ objectType <- records$objectType
 accession <- records$accessionNumber
 imageUrl <- paste0('https://framemark.vam.ac.uk/collections/',imageID,'/full/full/0/default.jpg')
 url <- paste0('https://collections.vam.ac.uk/item/',number)
-tweet <- paste0('From the V&A collection: ', accession, objectType, title, url, sep = ' ' )
+tweet <- paste('From the V&A collection: ', accession, objectType, title, url, sep = ' ' )
 temp_file <- tempfile()
 download.file(imageUrl, temp_file)
 
