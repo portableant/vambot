@@ -3,7 +3,14 @@ name: vambot
 on:
   schedule:
     - cron: '10 * * * *' 
-
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Run vambot manually'  
 jobs:
   vambot-post:
     runs-on: macos-latest
