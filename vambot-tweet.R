@@ -25,14 +25,7 @@ type <- records$currentLocation$type
 site <- records$currentLocation$site
 site <- switch(site, 'BH' = 'Blythe House', 'VA' = 'V&A')
 type <- switch(type, 'display' = 'On display' )
-tags <- random$clusters$collection$terms$value
-tags <- gsub("Collection", '', tags)
-tags <- gsub(".*?($|'|[^[:punct:]]).*?", "\\1", tags)
-tags <- gsub(" ","", tags)
-tags <- gsub("  ", '', tags)
-tags <- tags[c(1:4)]
-hashtags <- paste(c(tags), collapse=' #' )
-hashtags <- paste0('#',hashtags)
+hashtags <- '#art #design #museums'
 imageUrl <- paste0('https://framemark.vam.ac.uk/collections/',imageID,'/full/full/0/default.jpg')
 url <- paste0('https://collections.vam.ac.uk/item/',number)
 tweet <- paste('From the V&A collection:', accession, objectType, title, site, type, location, url, hashtags, sep = ' ' )
