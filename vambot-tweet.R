@@ -20,9 +20,17 @@ title <- records$primaryTitle
 imageID <- records$primaryImageId
 objectType <- records$objectType
 accession <- records$accessionNumber
+location <- records$currentLocation$displayName
+site <- records$currentLocation$site
+site <- switch(site, 'BH' = 'Blythe House', 'VA' = 'On display')
+tags <- random$clusters$category$terms$value
+tags <- strsplit(tags, " ")
+tags <- tags[c(1:4)]
+hashtags <- paste(c(tags), collapse=' #' )
+hashtags <- paste0('#',hashtags)
 imageUrl <- paste0('https://framemark.vam.ac.uk/collections/',imageID,'/full/full/0/default.jpg')
 url <- paste0('https://collections.vam.ac.uk/item/',number)
-tweet <- paste('From the V&A collection: ', accession, objectType, title, url, sep = ' ' )
+tweet <- paste('From the V&A collection:', accession, objectType, title, site, location, url, hashtags, sep = ' ' )
 temp_file <- tempfile()
 download.file(imageUrl, temp_file)
 
