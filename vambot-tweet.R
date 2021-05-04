@@ -22,7 +22,7 @@ objectType <- records$objectType
 accession <- records$accessionNumber
 location <- records$currentLocation$displayName
 site <- records$currentLocation$site
-site <- switch(site, 'BH' = 'Blythe House', 'VA' = 'On display')
+site <- switch(site, 'BH' = 'Blythe House', 'VA' = 'V&A')
 tags <- random$clusters$category$terms$value
 tags <- strsplit(tags, " ")
 tags <- tags[c(1:4)]
