@@ -4,10 +4,9 @@ library(jsonlite)
 
 
 # Create Twitter token
-vambot_token <- rtweet::create_token(
-  app = "vambot",
-  consumer_key =    Sys.getenv("TWITTER_CONSUMER_API_KEY"),
-  consumer_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
+vambot_token <- rtweet::rtweet_bot((
+  api_key =    Sys.getenv("TWITTER_CONSUMER_API_KEY"),
+  api_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
   access_token =    Sys.getenv("TWITTER_ACCESS_TOKEN"),
   access_secret =   Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 )
@@ -29,7 +28,7 @@ hashtags <- '#art #design #museums'
 imageUrl <- paste0('https://framemark.vam.ac.uk/collections/',imageID,'/full/full/0/default.jpg')
 url <- paste0('https://collections.vam.ac.uk/item/',number)
 tweet <- paste('From the V&A collection:', accession, objectType, title, site, type, location, url, hashtags, sep = ' ' )
-temp_file <- tempfile()
+temp_file <- tempfile(fileext = ".jpeg")
 download.file(imageUrl, temp_file)
 
 rtweet::post_tweet(
