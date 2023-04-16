@@ -2,7 +2,7 @@ name: vambot
 
 on:
   schedule:
-    - cron: '10 * * * *' 
+    - cron: '0 10,14,20 * * *' 
   workflow_dispatch:
     inputs:
       logLevel:
